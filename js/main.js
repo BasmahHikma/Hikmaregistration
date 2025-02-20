@@ -1,190 +1,81 @@
-//  create Funaction
-let submit = document.getElementById("submit"),
-First = document.getElementById("first"),
-Last = document.getElementById("last"),
-Address = document.getElementById("address"),
-Phone = document.getElementById("phone"),
-Email = document.getElementById("email"),
-Sex = document.getElementById("sex"),
-Job = document.getElementById("job"),
-Education = document.getElementById("education"),
-Experience = document.getElementById("year"),
-File = document.getElementById("uploadFile"),
-Communication = document.getElementById("communication<");
-let data,dataEdu, tmp, mood = 'create';
 
- 
-if(localStorage.Student !=null){
-    data =JSON.parse(localStorage.Student);
-}else{
-    data =[];
-}
-if(localStorage.StudentEdu !=null){
-    dataEdu =JSON.parse(localStorage.StudentEdu);
-}else{
-    dataEdu =[];
-}
+      function showConditions(event) {
+        event.preventDefault();
+        document.getElementById("conditionsModal").style.display = "block";
+      }
 
-submit.onclick = function(){
-    let newStu= {
-        First: First.value.toLowerCase(),
-        Last: Last.value.toLowerCase(),
-        Address: Address.value.toLowerCase(),
-        Phone: Phone.value,
-        Email: Email.value,
-        Sex: Sex.value,
-    }
-    let newStudentEdu= {
-        Job: Job.value.toLowerCase(),
-        Education:Education.value,
-        Experience :Experience.value,
-        File:File.innerHTML,
-        Communication:Communication.value,
-    }
-    if(First.value != "" && Last.value != "" && Address.value != "" && Phone.value != ""&& Email.value != "" && Sex.value != ""){
-        if(mood === 'create'){
-            if(newStu.count > 1){
-                for(let i=0 ; i<newStu.count ; i++){
-                    data.push(newStu);
-                }
-            }else{
-                data.push(newStu);
-            }
-        }else{
-            data[tmp]= newStu;
-            mood = 'create';
-            submit.innerHTML="Create";
-            count.style.display = "block";
+      function closeConditions() {
+        document.getElementById("conditionsModal").style.display = "none";
+      }
+
+      // Close the modal when clicking outside of it
+      window.onclick = function (event) {
+        var modal = document.getElementById("conditionsModal");
+        if (event.target == modal) {
+          modal.style.display = "none";
         }
-        if(Job.value != "" && Education.value != "" && Experience.value != "" && Communication.value != ""){
-            if(mood === 'create'){
-                if(newStudentEdu.count > 1){
-                    for(let i=0 ; i<newStudentEdu.count ; i++){
-                        data.push(newStudentEdu);
-                    }
-                }else{
-                    data.push(newStudentEdu);
-                }
-            }else{
-                data[tmp]= newStudentEdu;
-                mood = 'create';
-                submit.innerHTML="Create";
-                count.style.display = "block";
+      };
+const collegeSelect = document.getElementById("college");
+const departmentSelect = document.getElementById("department");
+
+collegeSelect.addEventListener("change", () => {
+    const selectedCollege = collegeSelect.value;
+    let departments = [];
+
+    if (selectedCollege === "institute") {
+        departments = ["قسم الحاسوب", "قسم التمريض"];
+    } else if (selectedCollege === "medical") {
+        departments = ["قسم الصيدلة", "قسم المختبرات", "قسم التمريض", "قسم التخدير"];
+    } else if (selectedCollege === "engineering") {
+        departments = ["قسم الهندسة المدنية", "قسم هندسة العمارة", "قسم تقنية المعلومات"];
+    } else if (selectedCollege === "administration") {
+        departments = ["قسم إدارة الأعمال", "قسم المحاسبة", "قسم التسويق", "قسم نظم المعلومات الإدارية"];
+    }
+
+    departmentSelect.innerHTML = "<option value='' disabled selected>اختر القسم</option>";
+    departments.forEach((department) => {
+        const option = document.createElement("option");
+        option.value = department;
+        option.textContent = department;
+        departmentSelect.appendChild(option);
+    });
+});
+
+function updateProgress() {
+    const form = document.getElementById("registration-form");
+    const formElements = form.elements;
+    let filledCount = 0;
+    let totalCount = 0;
+
+    for (let element of formElements) {
+        if (element.tagName === "INPUT" || element.tagName === "SELECT") {
+            totalCount++;
+            // Only consider filled elements if they are not file inputs or checkboxes
+            if ((element.type !== "file" && element.type !== "checkbox") && element.value.trim() !== "") {
+                filledCount++;
             }
-        clearData();
-    }
-    
-    
-    localStorage.setItem('Student' , JSON.stringify(data));
-    localStorage.setItem('StudentEdu' , JSON.stringify(dataEdu));
-    showDate();
-}
-}
-//read
-function showDate()
-{
-    let table ='',table_1 ='';
-    for(let i=1 ; i<data.length ; i++){
-        table += `<tr>
-                    <td>${i}</td>
-                    <td>${data[i].First}</td>
-                    <td>${data[i].Last}</td>
-                    <td>${data[i].Address}</td>
-                    <td>${data[i].Phone}</td>
-                    <td>${data[i].Email}</td>
-                    <td>${data[i].Sex}</td>
-                    <td><button class="btn btn-primary" onclick="updateData(${i})" id="update">update</button></td>
-                    <td><button class="btn btn-danger" onclick="deleteData(${i})" id="delete">delete</button></td>
-                    </tr>`;
-    }
-    for(let i=1 ; i<dataEdu.length ; i++){
-        table_1 += `<tr>
-                    <td>${i}</td>
-                    <td>${data[i].Job}</td>
-                    <td>${data[i].Education}</td>
-                    <td>${data[i].Experience}</td>
-                    <td>${data[i].File}</td>
-                    <td>${data[i].Communication}</td>
-                    <td><button class="btn btn-primary" onclick="updateData(${i})" id="update">update</button></td>
-                    <td><button class="btn btn-danger" onclick="deleteData(${i})" id="delete">delete</button></td>
-                    </tr>`;
-    }
-    document.getElementById('tbody_1').innerHTML = table_1;
-    let btndeletAll = document.getElementById('deletAll');
-
-    if(data.length>0){
-        btndeletAll.style.display="block";
-        btndeletAll.innerHTML = `
-        <div onclick = "deletAll()"> Delet All (${data.length})</div>`
-    }
-    else{
-        btndeletAll.innerHTML ='';
+        }
     }
 
-    if(dataEdu.length>0){
-        btndeletAll.style.display="block";
-        btndeletAll.innerHTML = `
-        <div onclick = "deletAll()"> Delet All (${dataEdu.length})</div>`
-    }
-    else{
-        btndeletAll.innerHTML ='';
-    }
-}
-showDate();
+    console.log(`Filled Count: ${filledCount}, Total Count: ${totalCount}`); // Debugging log
 
-//clear inputs
-function clearData(){
-    First.value="";
-    Last.value="";
-    Address.value="";
-    Phone.value="";
-    Email.value=" ";
-    Sex.value=" ";
-    Job.value=" ";
-    Education.value="";
-    Experience.value=" ";
-    File.value=" ";
-    Communication.value=" ";
-}
-// delet all
-
-function deletAll(){
-    localStorage.clear();
-    data.splice(0);
-    showDate();
+    const progress = totalCount > 0 ? Math.round((filledCount / totalCount) * 100) : 0;
+    const progressBar = document.getElementById("progressBar");
+    progressBar.style.width = progress + "%";
+    progressBar.textContent = progress + "%";
 }
 
-//  view Funaction
-
-//  edit Funaction
-function updateData(i){
-   First.value = data[i].First;
-   Last.value = data[i].Last;
-   Address.value = data[i].Address;
-   Phone.value = data[i].Phone;
-   Email.value = data[i].Email;
-   Sex.value = data[i].Sex;
-   Job.value = dataEdu[i].Job;
-   Education.value = dataEdu[i].Education;
-   Experience.value = dataEdu[i].Experience;
-   File.value = dataEdu[i].File;
-   Communication.value = dataEdu[i].Communication;
-    count.style.display = "none";
-    submit.innerHTML="Update";
-    mood = "update";
-    tmp = i;
-    scroll({
-        top:0,
-        behavior: 'smooth'
-    })
-
+// Attach updateProgress to input elements
+document.querySelectorAll('input, select').forEach(element => {
+    element.addEventListener('change', updateProgress);
+});
+function refreshPage() {
+    // You can include form validation or submission here if needed
+    location.reload();
 }
 
-//  delete Funaction
-function deleteData(i){
-    data.splice(i,1);
-    localStorage.Student = JSON.stringify(data);
-    localStorage.StudentEdu = JSON.stringify(dataEdu);
-    showDate();
-}
+
+
+
+
 
