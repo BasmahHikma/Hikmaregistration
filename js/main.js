@@ -41,41 +41,80 @@ collegeSelect.addEventListener("change", () => {
     });
 });
 
-function updateProgress() {
-    const form = document.getElementById("registration-form");
-    const formElements = form.elements;
-    let filledCount = 0;
-    let totalCount = 0;
+// function updateProgress() {
+//     const form = document.getElementById("registration-form");
+//     const formElements = form.elements;
+//     let filledCount = 0;
+//     let totalCount = 0;
 
-    for (let element of formElements) {
-        if (element.tagName === "INPUT" || element.tagName === "SELECT") {
-            totalCount++;
-            // Only consider filled elements if they are not file inputs or checkboxes
-            if ((element.type !== "file" && element.type !== "checkbox") && element.value.trim() !== "") {
-                filledCount++;
-            }
-        }
-    }
+//     for (let element of formElements) {
+//         if (element.tagName === "INPUT" || element.tagName === "SELECT") {
+//             totalCount++;
+//             // Only consider filled elements if they are not file inputs or checkboxes
+//             if ((element.type !== "file" && element.type !== "checkbox") && element.value.trim() !== "") {
+//                 filledCount++;
+//             }
+//         }
+//     }
 
-    console.log(`Filled Count: ${filledCount}, Total Count: ${totalCount}`); // Debugging log
+//     console.log(`Filled Count: ${filledCount}, Total Count: ${totalCount}`); // Debugging log
 
-    const progress = totalCount > 0 ? Math.round((filledCount / totalCount) * 100) : 0;
-    const progressBar = document.getElementById("progressBar");
-    progressBar.style.width = progress + "%";
-    progressBar.textContent = progress + "%";
-}
+//     const progress = totalCount > 0 ? Math.round((filledCount / totalCount) * 100) : 0;
+//     const progressBar = document.getElementById("progressBar");
+//     progressBar.style.width = progress + "%";
+//     progressBar.textContent = progress + "%";
+// }
 
 // Attach updateProgress to input elements
-document.querySelectorAll('input, select').forEach(element => {
-    element.addEventListener('change', updateProgress);
+// document.querySelectorAll('input, select').forEach(element => {
+//     element.addEventListener('change', updateProgress);
+// });
+// function refreshPage() {
+//     // You can include form validation or submission here if needed
+//     location.reload();
+// }
+
+
+document.getElementById('backIcon').addEventListener('click', function() {
+    alert('تحرك للامام !');
 });
-function refreshPage() {
-    // You can include form validation or submission here if needed
-    location.reload();
-}
+
+document.getElementById('forwardIcon').addEventListener('click', function() {
+    alert('تحرك للخلف!');
+});
 
 
+const inputs = document.querySelectorAll('input[type="text"],input[type="number"],input[type="date"], select');
+        const radioButtons = document.querySelectorAll('input[name="sex"]');
+        const progressBar = document.getElementById('progressBar');
 
+        function updateProgress() {
+            const totalFields = inputs.length + radioButtons.length; // إجمالي عدد الحقول
+            let filledCount = 0;
 
+            // حساب عدد الحقول المملوءة
+            inputs.forEach(input => {
+                if (input.value.trim()) filledCount++;
+            });
 
+            // حساب عدد الأزرار التي تم اختيارها
+            radioButtons.forEach(radio => {
+                if (radio.checked) filledCount++;
+            });
 
+            // حساب التقدم
+            const progress = (filledCount / totalFields) * 100;
+            progressBar.style.width = progress + '%';
+            progressBar.textContent = Math.floor(progress) + '%'; // عرض التقدم كعدد صحيح
+        }
+
+        // تحديث التقدم عند الكتابة في الحقول وعند تغيير الاختيارات
+        inputs.forEach(input => {
+            input.addEventListener('input', updateProgress);
+            input.addEventListener('change', updateProgress);
+        });
+
+        // تحديث التقدم عند اختيار زر الراديو
+        radioButtons.forEach(radio => {
+            radio.addEventListener('change', updateProgress);
+        });
