@@ -5,15 +5,16 @@
 }
 
   body {
-    background: var(--white-color);
+    background-color: hsl(0, 0%, 97%);
     color: #333;
     font-family: "Raleway";
-    height: 100%;
     direction: rtl;
+    
   }
 
   .bg{
-    background-image: url("../images/bg-9.jpg");
+    /* background-image: url("../image/page.webp"); */
+    height: 100%;
   }
 
   body h1 {
