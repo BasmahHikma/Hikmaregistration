@@ -209,9 +209,9 @@
  }
 
 .content .btn-color{
-display: inline-block; 
-width: 100%; 
-max-width: 150px;
+display: inline-block; /* Allows the button to be centered */
+width: 100%; /* Full width within its container on small screens */
+max-width: 150px; /* Optional: Set a max-width to prevent excessive stretching */
 padding: 8px;
 background-color: #800000;
 color: white;
@@ -220,7 +220,7 @@ border-radius: 4px;
 cursor: pointer;
 text-align: center;
 margin-top: 50px;
-margin-right: 40%;
+margin-right: 50%;
 font-size: 20px; /* Adjust font size */
 transition: background-color 0.3s ease;
 }
@@ -529,11 +529,39 @@ transition: background-color 0.3s ease;
   
 
   .navigation {
-    display: none;
-    
+    display: flex;
+    gap:10px; 
+    margin-right: 50%;
 }
 
+.nav-button {
+    background-color: #8a1538; 
+    color: white;
+    border: none; 
+    padding: 15px 20px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s; 
+}
 
+.nav-button:hover {
+    background-color: #a7224a; 
+}
+
+.nav-button i {
+    margin-right: 5px; 
+}
+.nav-button label {
+  color: white;
+}
+.navigation-button button i{
+  color: #faf9f9;
+}
+.navigation-button button i label{
+  margin-right: 10px;
+}
 
 .progress-container {
   width: 100%;
@@ -692,83 +720,3 @@ transition: background-color 0.3s ease;
 
 
 
-
-
-
-
-
-
-
-.container1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
-  max-width: 400px;
-  width: 100%; 
-  margin-right: 350px;
-}
-
-.container1 .steps {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  position: relative; }
-
-.steps .circle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
-  width: 50px;
-  color: #999;
-  font-size: 22px;
-  font-weight: 500;
-  border-radius: 50%;
-  background: #fff;
-  border: 4px solid #e0e0e0;
-  transition: all 200ms ease;
-  transition-delay: 0s; }
-
-.steps .circle.active {
-  transition-delay: 100ms;
-  border-color: #8a1538;
-   color: #8a1538; }
-
-.steps .progress-bar {
-  position: absolute;
-  height: 4px;
-  width: 100%;
-  background: #e0e0e0;
-  z-index: -1; }
-
-.progress-bar .indicator {
-  position: absolute;
-  height: 100%;
-  width: 0%;
-  background: #8a1538;
-  transition: all 300ms ease; }
-
-.container1 .buttons {
-  display: flex;
-  gap: 20px; }
-
-.buttons button {
-  padding: 8px 25px;
-  background: #8a1538;
-  border: none;
-  border-radius: 8px;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 400;
-  cursor: pointer;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
-  transition: all 200ms linear; }
-
-.buttons button:active {
-  transform: scale(0.97); }
-
-.buttons button:disabled {
-  background: #e75984;
-  cursor: not-allowed; }

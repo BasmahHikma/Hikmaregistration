@@ -75,7 +75,8 @@
                 <div class="tabs">
                   <input type="radio" id="tab1" name="tab-control" checked>
                   <input type="radio" id="tab2" name="tab-control">
-                  <input type="radio" id="tab3" name="tab-control"> 
+                  <input type="radio" id="tab3" name="tab-control">  
+                  <input type="radio" id="tab4" name="tab-control">
                 
                   <ul>
                     <li title="Personal Information">
@@ -223,7 +224,24 @@
                           </div>
                       </div>
                   <div></div><div></div><div></div>
-                     </form>     
+                     </form>
+
+                     <!-- ICONS front & end -->
+                     <div class="navigation">
+                      <button class="nav-button" id="backIcon">
+                        <i class="fas fa-chevron-left">
+                          <label for="tab2" role="button">Next</label>
+                        </i> <!-- أيقونة لتحرك للخلف -->
+                      </button>
+                      <button class="nav-button" id="forwardIcon">
+                          <i class="fas fa-chevron-right">
+                            <label for="tab1" role="button">Back</label>
+                          </i> <!-- أيقونة لتحرك للأمام -->
+                      </button>
+                  </div>
+                  <!-- /ICONS front & end -->
+    
+                           
                     </section>
     
                     <section>
@@ -414,8 +432,17 @@
                       <!-- /Some Conditions -->
 
               
-                      <button type="button" class="btn btn-lg  mb-2 btn-color " id="submit" onclick="refreshPage()">تسجيل </button>
 
+
+                      <div class="navigation-button">
+                          
+                          <button type="button" class="btn btn-sm btn-color " id="forwardIcon" >
+                            <i class="fas fa-chevron-right">
+                              <label for="tab2" role="button">Back</label>
+                            </i>
+                          </button>
+                          <button type="button" class="btn btn-lg  mb-2 btn-color " id="submit" onclick="refreshPage()">تسجيل </button>
+                      </div>
                               
                           <!-- <div id="deletAll" class="btn btn-secondary btn-lg btn-block mb-4">  </div>  -->
                          <!-- Modal -->
@@ -521,22 +548,6 @@
 
                        
                     </section>
-
-                    <div class="container1">
-                      <div class="steps">
-                          <span class="circle active">1</span>
-                          <span class="circle">2</span>
-                          <span class="circle">3</span>
-                          <div class="progress-bar">
-                              <span class="indicator"></span>
-                          </div>
-                      </div>
-              
-                      <div class="buttons">
-                          <button id="prev" disabled>Prev</button>
-                          <button id="next">Next</button>
-                      </div>
-                  </div>
     
                     
                   </div>
