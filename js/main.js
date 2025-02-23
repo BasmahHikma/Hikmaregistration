@@ -118,3 +118,129 @@ const inputs = document.querySelectorAll('input[type="text"],input[type="number"
         radioButtons.forEach(radio => {
             radio.addEventListener('change', updateProgress);
         });
+
+
+
+
+
+// const circles = document.querySelectorAll(".circle"),
+// progressBar1 = document.querySelector(".indicator"),
+// buttons = document.querySelectorAll("button");
+
+// let currentStep = 1;
+
+// const updateSteps = (e) => {
+//     currentStep = e.target.id === "next" ? ++currentStep : --currentStep;
+
+// circles.forEach((circle, index) => {
+//     circle.classList[`${index < currentStep ? "add" : "remove"}`]("active"); });
+
+// progressBar1.style.width = `${((currentStep - 1) / (circles.length - 1)) * 100}%`;
+
+// if (currentStep === circles.length) {
+//     buttons[1].disabled = true; }
+// else if (currentStep === 1) {
+//    buttons[0].disabled = true; }
+// else {
+//    buttons.forEach((button) => (button.disabled = false)); } };
+
+// buttons.forEach((button) => {
+//     button.addEventListener("click", updateSteps); });
+
+
+// const circles = document.querySelectorAll(".circle"),
+//       progressBar1 = document.querySelector(".indicator"),
+//       buttons = document.querySelectorAll("button");
+
+// let currentStep = 1;
+
+// const updateSteps = (e) => {
+//     if (e.target.id === "next") {
+//         // الانتقال إلى tab2
+//         const tab2 = document.querySelector('label[for="tab2"]');
+//         if (tab2) {
+//             tab2.click(); // محاكاة النقر على label
+//         }
+//         currentStep++;
+//     } else {
+//         currentStep--;
+//     }
+
+//     circles.forEach((circle, index) => {
+//         circle.classList[`${index < currentStep ? "add" : "remove"}`]("active");
+//     });
+
+//     progressBar1.style.width = `${((currentStep - 1) / (circles.length - 1)) * 100}%`;
+
+//     if (currentStep === circles.length) {
+//         buttons[1].disabled = true;
+//     } else if (currentStep === 1) {
+//         buttons[0].disabled = true;
+//     } else {
+//         buttons.forEach((button) => (button.disabled = false));
+//     }
+// };
+
+// buttons.forEach((button) => {
+//     button.addEventListener("click", updateSteps);
+// });
+
+const circles = document.querySelectorAll(".circle"),
+      progressBar1 = document.querySelector(".indicator"),
+      buttons = document.querySelectorAll("button");
+
+let currentStep = 1;
+
+const updateSteps = (e) => {
+    if (e.target.id === "next") {
+        if (currentStep === 1) {
+            // الانتقال إلى tab2
+            const tab2 = document.querySelector('label[for="tab2"]');
+            if (tab2) {
+                tab2.click(); // محاكاة النقر على label
+            }
+            currentStep++;
+        } else if (currentStep === 2) {
+            // الانتقال إلى tab3
+            const tab3 = document.querySelector('label[for="tab3"]');
+            if (tab3) {
+                tab3.click(); // محاكاة النقر على label
+            }
+            currentStep++;
+        }
+    } else { // للسابق
+        if (currentStep === 2) {
+            // الانتقال إلى tab2
+            const tab1 = document.querySelector('label[for="tab1"]');
+            if (tab1) {
+                tab1.click(); // محاكاة النقر على label
+            }
+            currentStep--;
+        } else if (currentStep === 3) {
+            // الانتقال إلى tab1
+            const tab2 = document.querySelector('label[for="tab2"]');
+            if (tab2) {
+                tab2.click(); // محاكاة النقر على label
+            }
+            currentStep--;
+        }
+    }
+
+    circles.forEach((circle, index) => {
+        circle.classList[`${index < currentStep ? "add" : "remove"}`]("active");
+    });
+
+    progressBar1.style.width = `${((currentStep - 1) / (circles.length - 1)) * 100}%`;
+
+    if (currentStep === circles.length) {
+        buttons[1].disabled = true;
+    } else if (currentStep === 1) {
+        buttons[0].disabled = true;
+    } else {
+        buttons.forEach((button) => (button.disabled = false));
+    }
+};
+
+buttons.forEach((button) => {
+    button.addEventListener("click", updateSteps);
+});
