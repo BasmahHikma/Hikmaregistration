@@ -529,39 +529,9 @@ transition: background-color 0.3s ease;
   
 
   .navigation {
-    display: flex;
-    gap:10px; 
-    margin-right: 50%;
+    display: none; 
 }
 
-.nav-button {
-    background-color: #8a1538; 
-    color: white;
-    border: none; 
-    padding: 15px 20px; 
-    border-radius: 5px; 
-    cursor: pointer; 
-    display: flex;
-    align-items: center;
-    transition: background-color 0.3s; 
-}
-
-.nav-button:hover {
-    background-color: #a7224a; 
-}
-
-.nav-button i {
-    margin-right: 5px; 
-}
-.nav-button label {
-  color: white;
-}
-.navigation-button button i{
-  color: #faf9f9;
-}
-.navigation-button button i label{
-  margin-right: 10px;
-}
 
 .progress-container {
   width: 100%;
@@ -618,11 +588,21 @@ transition: background-color 0.3s ease;
   .navigation-button{
     margin-right: -180px;
   }
+  .steps .circle {
+        height: 40px;
+        width: 40px;
+        font-size: 18px;
+    }
+
+    .buttons button {
+        padding: 6px 20px;
+        font-size: 14px;
+    }
   
 }
 
 
-@media (max-width: 450px) {
+@media (max-width: 400px) {
   .page-wrapper .sectionone{
      display: flex;
      flex-direction: column;
@@ -675,6 +655,15 @@ transition: background-color 0.3s ease;
    .navigation-button{
      margin-right: -180px;
    } */
+    .container {
+        gap: 20px; /* تقليل الفجوة بين العناصر */
+    }
+
+    .steps .circle {
+        height: 35px;
+        width: 35px;
+        font-size: 16px;
+    }
     
  }
 @media (max-width: 360px) {
@@ -720,3 +709,96 @@ transition: background-color 0.3s ease;
 
 
 
+
+
+
+
+
+
+
+.slidebody{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container1 {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    max-width: 400px;
+    width: 90%; /* تغيير العرض ليكون 90% */
+}
+
+.container1 .steps {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    position: relative; 
+}
+
+.steps .circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    color: #999;
+    font-size: 22px;
+    font-weight: 500;
+    border-radius: 50%;
+    background: #fff;
+    border: 4px solid #e0e0e0;
+    transition: all 200ms ease;
+}
+
+.steps .circle.active {
+    border-color: #8a1538;
+    color: #8a1538; 
+}
+
+.steps .progress-bar {
+    position: absolute;
+    height: 4px;
+    width: 100%;
+    background: #e0e0e0;
+    z-index: -1; 
+}
+
+.progress-bar .indicator {
+    position: absolute;
+    height: 100%;
+    width: 0%;
+    background: #8a1538;
+    transition: all 300ms ease; 
+}
+
+.container1 .buttons {
+    display: flex;
+    gap: 20px; 
+}
+
+.buttons button {
+    padding: 8px 25px;
+    background: #8a1538;
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    transition: all 200ms linear; 
+}
+
+.buttons button:active {
+    transform: scale(0.97); 
+}
+
+.buttons button:disabled {
+    background: #8b193b;
+    cursor: not-allowed; 
+}
