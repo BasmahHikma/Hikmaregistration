@@ -4,17 +4,21 @@
     --gray-color:#929daf;
 }
 
-  body {
-    background-color: hsl(0, 0%, 97%);
+ body{
+    background-color: #fdf6e0;
     color: #333;
     font-family: "Raleway";
     direction: rtl;
     
+    
   }
 
   .bg{
-    /* background-image: url("../image/page.webp"); */
-    height: 100%;
+    background-image: url("../image/page.webp");
+    height: 100vh;
+    margin: 0;
+    background-attachment: fixed;
+   
   }
 
   body h1 {
@@ -24,6 +28,7 @@
     padding: 40px 0 20px 0;
     margin: 0;
   }
+ 
   .ti-employee h1{
     font-weight: 500;
     font-style: normal;
@@ -426,13 +431,11 @@ transition: background-color 0.3s ease;
 
 
 
-
   .page-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100vw;
+    
   }
   .content-wrapper {
     display: flex;
@@ -553,105 +556,6 @@ transition: background-color 0.3s ease;
 
 
 
-/* meadia ..... */
-
-@media (max-width: 1000px) {
-  .tabs ul li label {
-    white-space: initial;
-  }
-  .tabs ul li label br{
-    display: initial;
-  }
-  .tabs ul li label i {
-    height: 1.5em;
-  }
-}
-
-@media (max-width: 600px) {
-  .tabs ul li label i{
-    padding: 5px;
-    border-radius: 5px;
-    background-color: #8a1538;
-  }
-  .tabs ul li label span {
-    display: none;
-  }
-  .tabs .content {
-    margin-top: 20px;
-  }
-  .navigation .nav-button{
-    padding: 10px 8px;
-  }
-  .condition-part .form-check label {
-    margin-right: -80px;
-  }
-  .navigation-button{
-    margin-right: -180px;
-  }
-  .steps .circle {
-        height: 40px;
-        width: 40px;
-        font-size: 18px;
-    }
-
-    .buttons button {
-        padding: 6px 20px;
-        font-size: 14px;
-    }
-  
-}
-
-
-@media (max-width: 400px) {
-  .page-wrapper .sectionone{
-     display: flex;
-     flex-direction: column;
-   }
-   .page-wrapper .sectionone .image-container{
-     width: 100%;
-     height: 100%;
-   }
-   .page-wrapper .sectionone .image-container img{
-     width: 100px;
-     height: 100px;
-   }
-   .page-wrapper .sectionone .info-container{
-     width: 100%;
-     padding: 20px;
-   }
-   .condition-part .form-check label {
-    font-size: 8px;
-    font-weight: bold;
-    margin-right: -60px;
-  }
-  .navigation-button{
-    margin-right: -10px;
-    width: 80px;
-  }
-  .navigation .nav-button{
-    padding: 10px 8px;
-    margin-right: -10px;
-    width: 80px;
-    gap: 40px;
-  }
-   
-      .container1 {
-        gap: 20px; 
-    }
-
-    .steps .circle {
-        height: 35px;
-        width: 35px;
-        font-size: 16px;
-    }
-    
- }
-
-
-
-
-
-
 
 
 
@@ -743,3 +647,119 @@ transition: background-color 0.3s ease;
     background: #8b193b;
     cursor: not-allowed; 
 }
+
+#submit{
+  
+  margin-right: 530px;
+}
+.section-2 .container{
+  background-color: #8b193b;
+  margin-bottom: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* meadia ..... */
+
+@media (max-width: 1000px) {
+  .tabs ul li label {
+    white-space: initial;
+  }
+  .tabs ul li label br{
+    display: initial;
+  }
+  .tabs ul li label i {
+    height: 1.5em;
+  }
+}
+
+@media (max-width: 600px) {
+  .tabs ul li label i{
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #8a1538;
+  }
+  .tabs ul li label span {
+    display: none;
+  }
+  .tabs .content {
+    margin-top: 20px;
+  }
+  .navigation .nav-button{
+    padding: 10px 8px;
+  }
+  .condition-part .form-check label {
+    margin-right: -80px;
+  }
+  .navigation-button{
+    margin-right: -180px;
+  }
+  .steps .circle {
+        height: 40px;
+        width: 40px;
+        font-size: 18px;
+    }
+
+    .buttons button {
+        padding: 6px 20px;
+        font-size: 14px;
+    }
+  
+}
+
+
+@media (max-width: 400px) {
+  .page-wrapper .sectionone{
+     display: flex;
+     flex-direction: column;
+   }
+   .page-wrapper .sectionone .image-container{
+     width: 100%;
+     height: 100%;
+   }
+   .page-wrapper .sectionone .image-container img{
+     width: 100px;
+     height: 100px;
+   }
+   .page-wrapper .sectionone .info-container{
+     width: 100%;
+     padding: 20px;
+   }
+   .condition-part .form-check label {
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: -60px;
+  }
+ 
+ #submit{
+    padding: 10px 8px;
+    margin-right: 50px;
+    width: 90px;
+    font-size: 12px;
+  }
+   
+      .container1 {
+        gap: 20px; 
+    }
+
+    .steps .circle {
+        height: 35px;
+        width: 35px;
+        font-size: 16px;
+    }
+    
+ }
+
+
+
+
+

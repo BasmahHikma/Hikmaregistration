@@ -15,12 +15,13 @@
 </head>
 <body>
   <div class="bg">
-
+    <!-- page-wrapper -->
     <div class="page-wrapper">
+          <!-- content-wrapper -->
       <div class="content-wrapper">
           <input type="radio" name="toggle" id="toggle1">
           <input type="radio" name="toggle" id="toggle2">
-        <input type="radio" name="toggle" id="toggle3">
+         <input type="radio" name="toggle" id="toggle3">
         
         <section id="section-1" class="sectionone">
           <div class="image-container">
@@ -109,124 +110,122 @@
                   
                   <div class="content">
                     
-                    <section>
-                     <!-- presonal information  -->
-                     <form class="form fv-plugins-framework fv-plugins-bootstrap" id="kt_form">
-                     
-                      <div class="row">
-                          <div class="col-xl-12">
-                              <!--begin::Wizard Step 1-->
-                              <div class="my-5 step" >
-                                  <h4 class="font-weight-bold mb-10 text-color ">قم بتعبئة كافة البيانات المطلوبة كما ورد بالنص في إستمارة الثانوية العامة  :   </h4>
-
-                                  <div class="form-group row fv-plugins-icon-container has-danger order-input">
-                                      <label class="col-xl-3 col-lg-3 col-form-label">الاسم بالعربي  :</label>
-                                      <div class="col-lg-9 col-xl-9">
-                                          <input id="input1" class="form-control form-control-solid form-control-lg is-invalid" name="Arabicname" type="text" value="" placeholder="الاسم بالعربي ......" >
-                                      <div class="fv-plugins-message-container"><div data-field="Arabicname" data-validator="notEmpty" class="fv-help-block">Arabic Name is required</div></div></div>
-                                  </div>
-                                  <div class="form-group row fv-plugins-icon-container has-danger order-input">
-                                    <label class="col-xl-3 col-lg-3 col-form-label">  الاسم بالانجلش  :  </label>
-                                    <div class="col-lg-9 col-xl-9">
-                                        <input id="input2" class="form-control form-control-solid form-control-lg is-invalid" name="EnglishName" type="text" value="" placeholder="الاسم الانجليزي ......" >
-                                    <div class="fv-plugins-message-container"><div data-field="EnglishName" data-validator="notEmpty" class="fv-help-block">English Name is required</div></div></div>
-                                </div>
-                                  <!--end::Group-->
-                                  <!--begin::Group-->
-                                  <div class="form-group row fv-plugins-icon-container has-success order-input">
-                                      <label class="col-xl-3 col-lg-3 col-form-label">العنوان الحالي  :</label>
-                                      <div class="col-lg-9 col-xl-9">
-                                          <input id="input3" class="form-control form-control-solid form-control-lg is-valid" name="address" type="text" placeholder="ادخل عنوانك الصحيح رجائاً" >
-                                          <span class="form-text text-muted">Don't Forget your Address.....</span>
-                                      <div class="fv-plugins-message-container"></div></div>
-                                  </div>
-                                  <!--end::Group-->
-                                  <!--phone number-->
-                                  <div class="form-group row fv-plugins-icon-container has-success order-input">
-                                      <label class="col-xl-3 col-lg-3 col-form-label">جوال الطالب  :</label>
-                                      <div class="col-lg-9 col-xl-9">
-                                          <div class="input-group input-group-solid input-group-lg">
-                                              <input id="input4" type="number" class="form-control form-control-solid form-control-lg is-valid" name="phone" value="+967 " placeholder="جوال الخاص بالطالب "  min="1" max="9" updateProgress()>
-                                          </div>
-                                          <span class="form-text text-muted">Enter valid  phone number( .... ).</span>
-                                      <div class="fv-plugins-message-container"></div></div>
-                                  </div>
-    
-                                  <div class="form-group row fv-plugins-icon-container has-success order-input">
-                                    <label class="col-xl-3 col-lg-3 col-form-label">جوال ولى الأمر  : </label>
-                                    <div class="col-lg-9 col-xl-9">
-                                        <div class="input-group input-group-solid input-group-lg">
-                                            <input id="input5" type="number" class="form-control form-control-solid form-control-lg is-valid" name="phone" value="+967 " placeholder="جوال ولى امر الطالب "  min="1" max="9">
-                                        </div>
-                                        <span class="form-text text-muted">Enter valid  phone number( .... ).</span>
-                                    <div class="fv-plugins-message-container"></div></div>
-                                </div>
-    
-                                <div class="form-group row fv-plugins-icon-container has-success order-input">
-                                  <label class="col-xl-3 col-lg-3 col-form-label"> رقم اخر : </label> 
-                                  <div class="col-lg-9 col-xl-9">
-                                      <div class="input-group input-group-solid input-group-lg">
-                                          <input id="input6" type="number" class="form-control form-control-solid form-control-lg is-valid" name="phone" value="+967 " placeholder="رقم اخر في حال عدم رد الطالب "  min="1" max="9">
-                                      </div>
-                                      <span class="form-text text-muted">Enter valid  phone number( .... ).</span>
-                                  <div class="fv-plugins-message-container"></div></div>
-                              </div>
-                                  <!--phne number -->
-
-                                  <div class="form-group row fv-plugins-icon-container order-input">
-                                    <label class="col-xl-3 col-lg-3 col-form-label">الجنسية  :</label>
-                                    <div class="col-lg-9 col-xl-9" id="selectInputs">
-                                      <select name="" class="form-control form-control-lg form-control-solid" >
-                                        <option selected="selected">اختر الجنسية   ...</option>
-                                        <option value="Maneger">يمنى</option>
-                                        <option value="Teacher" >اجنبي </option>
-                                      </select>
-                                    <div class="fv-plugins-message-container"></div></div>
-                                  </div>
-                                  
+                      <section>
+                        <!-- presonal information  -->
+                        <form class="form fv-plugins-framework fv-plugins-bootstrap" id="kt_form">
+                         <div class="row">
+                             <div class="col-xl-12">
+                                 <!--begin::Wizard Step 1-->
+                                 <div class="my-5 step" >
+                                     <h4 class="font-weight-bold mb-10 text-color ">قم بتعبئة كافة البيانات المطلوبة كما ورد بالنص في إستمارة الثانوية العامة  :   </h4>
+   
+                                     <div class="form-group row fv-plugins-icon-container has-danger order-input">
+                                         <label class="col-xl-3 col-lg-3 col-form-label">الاسم بالعربي  :</label>
+                                         <div class="col-lg-9 col-xl-9">
+                                             <input id="input1" class="form-control form-control-solid form-control-lg is-invalid" name="Arabicname" type="text" value="" placeholder="الاسم بالعربي ......" >
+                                         <div class="fv-plugins-message-container"><div data-field="Arabicname" data-validator="notEmpty" class="fv-help-block">مطلوب الاسم بالعربي </div></div></div>
+                                     </div>
+                                     <div class="form-group row fv-plugins-icon-container has-danger order-input">
+                                       <label class="col-xl-3 col-lg-3 col-form-label">  الاسم بالانجلش  :  </label>
+                                       <div class="col-lg-9 col-xl-9">
+                                           <input id="input2" class="form-control form-control-solid form-control-lg is-invalid" name="EnglishName" type="text" value="" placeholder="الاسم الانجليزي ......" >
+                                       <div class="fv-plugins-message-container"><div data-field="EnglishName" data-validator="notEmpty" class="fv-help-block">مطلوب الاسم بالانجليزي </div></div></div>
+                                   </div>
+                                     <!--end::Group-->
                                      <!--begin::Group-->
-                                  <div class="form-group row fv-plugins-icon-container has-success order-input">
-                                      <label class="col-xl-3 col-lg-3 col-form-label">مكان الميلاد   :</label>
-                                      <div class="col-lg-9 col-xl-9">
-                                          <input id="input7" class="form-control form-control-solid form-control-lg is-valid" name="birthdayplace" type="text" placeholder="ادخل مكان الميلاد الخالص بك حسب شهادة الثانوية" >
-                                          <span class="form-text text-muted">Don't Forget your birthday place.....</span>
-                                      <div class="fv-plugins-message-container"></div></div>
-                                  </div>
-                                  <!--end::Group-->
-                                   <!--begin::Group-->
+                                     <div class="form-group row fv-plugins-icon-container has-success order-input">
+                                         <label class="col-xl-3 col-lg-3 col-form-label">العنوان الحالي  :</label>
+                                         <div class="col-lg-9 col-xl-9">
+                                             <input id="input3" class="form-control form-control-solid form-control-lg is-valid" name="address" type="text" placeholder="ادخل عنوانك الصحيح رجائاً" >
+                                             <span class="form-text text-muted">لاتنسى العنوان الخاص بك </span>
+                                         <div class="fv-plugins-message-container"></div></div>
+                                     </div>
+                                     <!--end::Group-->
+                                     <!--phone number-->
+                                     <div class="form-group row fv-plugins-icon-container has-success order-input">
+                                         <label class="col-xl-3 col-lg-3 col-form-label">جوال الطالب  :</label>
+                                         <div class="col-lg-9 col-xl-9">
+                                             <div class="input-group input-group-solid input-group-lg">
+                                                 <input id="input4" type="number" class="form-control form-control-solid form-control-lg is-valid" name="phone" value="+967 " placeholder="جوال الخاص بالطالب "  min="1" max="9" updateProgress()>
+                                             </div>
+                                             <span class="form-text text-muted">ادخل رقمك المتاح.</span>
+                                         <div class="fv-plugins-message-container"></div></div>
+                                     </div>
+       
+                                     <div class="form-group row fv-plugins-icon-container has-success order-input">
+                                       <label class="col-xl-3 col-lg-3 col-form-label">جوال ولى الأمر  : </label>
+                                       <div class="col-lg-9 col-xl-9">
+                                           <div class="input-group input-group-solid input-group-lg">
+                                               <input id="input5" type="number" class="form-control form-control-solid form-control-lg is-valid" name="phone" value="+967 " placeholder="جوال ولى امر الطالب "  min="1" max="9">
+                                           </div>
+                                           <span class="form-text text-muted">ادخل رقم ولى الامر المتاح.</span>
+                                       <div class="fv-plugins-message-container"></div></div>
+                                   </div>
+       
                                    <div class="form-group row fv-plugins-icon-container has-success order-input">
-                                    <label class="col-xl-3 col-lg-3 col-form-label">تاريخ الميلاد   :</label>
-                                    <div class="col-lg-9 col-xl-9">
-                                        <input id="input8" v class="form-control form-control-solid form-control-lg is-valid" name="birthdayDate" type="date" placeholder="ادخل تاريخ الميلاد الخالص بك حسب شهادة الثانوية" >
-                                        <span class="form-text text-muted">Don't Forget your birthday date.....</span>
-                                    <div class="fv-plugins-message-container"></div></div>
-                                </div>
-                                <!--end::Group-->
-                                <!--begin::Group-->
-                                <div class="form-group row align-items-center fv-plugins-icon-container order-input">
-                                  <label class="col-xl-3 col-lg-3 col-form-label" id="">الجنس </label>
-                                  <div class="col-lg-9 col-xl-6">
-                                    <div class="checkbox-inline">
-                                      <label class="checkbox">
-                                      <input name="sex" type="radio" value="ذكر" id="option1">
-                                      <span></span >
-                                        ذكر</label>
-                                      <label class="checkbox">
-                                      <input name="sex" type="radio" value="انثى" id="option2">
-                                      <span></span>انثى</label>
-                                    </div>
-                                  <div class="fv-plugins-message-container"></div></div>
-                                </div>
-                                <!--end::Group-->
-                                  
-                              </div>
-                                  <!--begin::Group-->
-                          </div>
-                      </div>
-                  <div></div><div></div><div></div>
-                     </form>
-                           
-                    </section>
+                                     <label class="col-xl-3 col-lg-3 col-form-label"> رقم اخر : </label> 
+                                     <div class="col-lg-9 col-xl-9">
+                                         <div class="input-group input-group-solid input-group-lg">
+                                             <input id="input6" type="number" class="form-control form-control-solid form-control-lg is-valid" name="phone" value="+967 " placeholder="رقم اخر في حال عدم رد الطالب "  min="1" max="9">
+                                         </div>
+                                         <span class="form-text text-muted">رقم اخر متاح .</span>
+                                     <div class="fv-plugins-message-container"></div></div>
+                                 </div>
+                                     <!--phne number -->
+   
+                                     <div class="form-group row fv-plugins-icon-container order-input">
+                                       <label class="col-xl-3 col-lg-3 col-form-label">الجنسية  :</label>
+                                       <div class="col-lg-9 col-xl-9" id="selectInputs">
+                                         <select name="" class="form-control form-control-lg form-control-solid" >
+                                           <option selected="selected">اختر الجنسية   ...</option>
+                                           <option value="Maneger">يمنى</option>
+                                           <option value="Teacher" >اجنبي </option>
+                                         </select>
+                                       <div class="fv-plugins-message-container"></div></div>
+                                     </div>
+                                     
+                                        <!--begin::Group-->
+                                     <div class="form-group row fv-plugins-icon-container has-success order-input">
+                                         <label class="col-xl-3 col-lg-3 col-form-label">مكان الميلاد   :</label>
+                                         <div class="col-lg-9 col-xl-9">
+                                             <input id="input7" class="form-control form-control-solid form-control-lg is-valid" name="birthdayplace" type="text" placeholder="ادخل مكان الميلاد الخالص بك حسب شهادة الثانوية" >
+                                             <span class="form-text text-muted">ادخل مكان الميلاد </span>
+                                         <div class="fv-plugins-message-container"></div></div>
+                                     </div>
+                                     <!--end::Group-->
+                                      <!--begin::Group-->
+                                      <div class="form-group row fv-plugins-icon-container has-success order-input">
+                                       <label class="col-xl-3 col-lg-3 col-form-label">تاريخ الميلاد   :</label>
+                                       <div class="col-lg-9 col-xl-9">
+                                           <input id="input8" v class="form-control form-control-solid form-control-lg is-valid" name="birthdayDate" type="date" placeholder="ادخل تاريخ الميلاد الخالص بك حسب شهادة الثانوية" >
+                                           <span class="form-text text-muted">ادخل تاريخ الميلاد</span>
+                                       <div class="fv-plugins-message-container"></div></div>
+                                   </div>
+                                   <!--end::Group-->
+                                   <!--begin::Group-->
+                                   <div class="form-group row align-items-center fv-plugins-icon-container order-input">
+                                     <label class="col-xl-3 col-lg-3 col-form-label" id="">الجنس </label>
+                                     <div class="col-lg-9 col-xl-6">
+                                       <div class="checkbox-inline">
+                                         <label class="checkbox">
+                                         <input name="sex" type="radio" value="ذكر" id="option1">
+                                         <span></span >
+                                           ذكر</label>
+                                         <label class="checkbox">
+                                         <input name="sex" type="radio" value="انثى" id="option2">
+                                         <span></span>انثى</label>
+                                       </div>
+                                     <div class="fv-plugins-message-container"></div></div>
+                                   </div>
+                                   <!--end::Group-->
+                                     
+                                 </div>
+                                     <!--begin::Group-->
+                             </div>
+                         </div>
+                     <div></div><div></div><div></div>
+                        </form>
+                       </section>
     
                     <section>
                         <!-- Education Level  -->
@@ -415,9 +414,10 @@
                       </div>
                       <!-- /Some Conditions -->
 
-              
-                      <button type="button" class="btn btn-lg  mb-2 btn-color " id="submit" onclick="refreshPage()">تسجيل </button>
-                              
+                      
+                      <button type="button" class="btn btn-lg mb-2 btn-color" id="submit" onclick="refreshPage()">تسجيل </button>
+                      
+
                           <!-- <div id="deletAll" class="btn btn-secondary btn-lg btn-block mb-4">  </div>  -->
                          <!-- Modal -->
                          <div id="conditionsModal" class="modal">
@@ -520,7 +520,7 @@
                           <!-- /Modal -->
                         </div>
 
-                       
+          
                     </section>
     
                     
@@ -552,7 +552,9 @@
         
 
       </div>
-      </div>
+      <!-- /content-wrapper -->
+    </div>
+    <!-- /page-wrapper -->
      
   </div>
 

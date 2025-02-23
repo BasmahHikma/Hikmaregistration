@@ -1,15 +1,412 @@
-<div class="container1">
-    <div class="steps">
-        <span class="circle active">1</span>
-        <span class="circle">2</span>
-        <span class="circle">3</span>
-        <div class="progress-bar">
-            <span class="indicator"></span>
-        </div>
-    </div>
+<section>
+  <!-- presonal information  -->
+  <form class="form fv-plugins-framework fv-plugins-bootstrap" id="kt_form">
+  
+   <div class="row">
+       <div class="col-xl-12">
+           <!--begin::Wizard Step 1-->
+           <div class="my-5 step" >
+               <h4 class="font-weight-bold mb-10 text-color ">قم بتعبئة كافة البيانات المطلوبة كما ورد بالنص في إستمارة الثانوية العامة  :   </h4>
 
-    <div class="buttons">
-        <button id="prev" disabled>Prev</button>
-        <button id="next">Next</button>
-    </div>
+               <div class="form-group row fv-plugins-icon-container has-danger order-input">
+                   <label class="col-xl-3 col-lg-3 col-form-label">الاسم بالعربي  :</label>
+                   <div class="col-lg-9 col-xl-9">
+                       <input id="input1" class="form-control form-control-solid form-control-lg is-invalid" name="Arabicname" type="text" value="" placeholder="الاسم بالعربي ......" >
+                   <div class="fv-plugins-message-container"><div data-field="Arabicname" data-validator="notEmpty" class="fv-help-block">Arabic Name is required</div></div></div>
+               </div>
+               <div class="form-group row fv-plugins-icon-container has-danger order-input">
+                 <label class="col-xl-3 col-lg-3 col-form-label">  الاسم بالانجلش  :  </label>
+                 <div class="col-lg-9 col-xl-9">
+                     <input id="input2" class="form-control form-control-solid form-control-lg is-invalid" name="EnglishName" type="text" value="" placeholder="الاسم الانجليزي ......" >
+                 <div class="fv-plugins-message-container"><div data-field="EnglishName" data-validator="notEmpty" class="fv-help-block">English Name is required</div></div></div>
+             </div>
+               <!--end::Group-->
+               <!--begin::Group-->
+               <div class="form-group row fv-plugins-icon-container has-success order-input">
+                   <label class="col-xl-3 col-lg-3 col-form-label">العنوان الحالي  :</label>
+                   <div class="col-lg-9 col-xl-9">
+                       <input id="input3" class="form-control form-control-solid form-control-lg is-valid" name="address" type="text" placeholder="ادخل عنوانك الصحيح رجائاً" >
+                       <span class="form-text text-muted">Don't Forget your Address.....</span>
+                   <div class="fv-plugins-message-container"></div></div>
+               </div>
+               <!--end::Group-->
+               <!--phone number-->
+               <div class="form-group row fv-plugins-icon-container has-success order-input">
+                   <label class="col-xl-3 col-lg-3 col-form-label">جوال الطالب  :</label>
+                   <div class="col-lg-9 col-xl-9">
+                       <div class="input-group input-group-solid input-group-lg">
+                           <input id="input4" type="number" class="form-control form-control-solid form-control-lg is-valid" name="phone" value="+967 " placeholder="جوال الخاص بالطالب "  min="1" max="9" updateProgress()>
+                       </div>
+                       <span class="form-text text-muted">Enter valid  phone number( .... ).</span>
+                   <div class="fv-plugins-message-container"></div></div>
+               </div>
+
+               <div class="form-group row fv-plugins-icon-container has-success order-input">
+                 <label class="col-xl-3 col-lg-3 col-form-label">جوال ولى الأمر  : </label>
+                 <div class="col-lg-9 col-xl-9">
+                     <div class="input-group input-group-solid input-group-lg">
+                         <input id="input5" type="number" class="form-control form-control-solid form-control-lg is-valid" name="phone" value="+967 " placeholder="جوال ولى امر الطالب "  min="1" max="9">
+                     </div>
+                     <span class="form-text text-muted">Enter valid  phone number( .... ).</span>
+                 <div class="fv-plugins-message-container"></div></div>
+             </div>
+
+             <div class="form-group row fv-plugins-icon-container has-success order-input">
+               <label class="col-xl-3 col-lg-3 col-form-label"> رقم اخر : </label> 
+               <div class="col-lg-9 col-xl-9">
+                   <div class="input-group input-group-solid input-group-lg">
+                       <input id="input6" type="number" class="form-control form-control-solid form-control-lg is-valid" name="phone" value="+967 " placeholder="رقم اخر في حال عدم رد الطالب "  min="1" max="9">
+                   </div>
+                   <span class="form-text text-muted">Enter valid  phone number( .... ).</span>
+               <div class="fv-plugins-message-container"></div></div>
+           </div>
+               <!--phne number -->
+
+               <div class="form-group row fv-plugins-icon-container order-input">
+                 <label class="col-xl-3 col-lg-3 col-form-label">الجنسية  :</label>
+                 <div class="col-lg-9 col-xl-9" id="selectInputs">
+                   <select name="" class="form-control form-control-lg form-control-solid" >
+                     <option selected="selected">اختر الجنسية   ...</option>
+                     <option value="Maneger">يمنى</option>
+                     <option value="Teacher" >اجنبي </option>
+                   </select>
+                 <div class="fv-plugins-message-container"></div></div>
+               </div>
+               
+                  <!--begin::Group-->
+               <div class="form-group row fv-plugins-icon-container has-success order-input">
+                   <label class="col-xl-3 col-lg-3 col-form-label">مكان الميلاد   :</label>
+                   <div class="col-lg-9 col-xl-9">
+                       <input id="input7" class="form-control form-control-solid form-control-lg is-valid" name="birthdayplace" type="text" placeholder="ادخل مكان الميلاد الخالص بك حسب شهادة الثانوية" >
+                       <span class="form-text text-muted">Don't Forget your birthday place.....</span>
+                   <div class="fv-plugins-message-container"></div></div>
+               </div>
+               <!--end::Group-->
+                <!--begin::Group-->
+                <div class="form-group row fv-plugins-icon-container has-success order-input">
+                 <label class="col-xl-3 col-lg-3 col-form-label">تاريخ الميلاد   :</label>
+                 <div class="col-lg-9 col-xl-9">
+                     <input id="input8" v class="form-control form-control-solid form-control-lg is-valid" name="birthdayDate" type="date" placeholder="ادخل تاريخ الميلاد الخالص بك حسب شهادة الثانوية" >
+                     <span class="form-text text-muted">Don't Forget your birthday date.....</span>
+                 <div class="fv-plugins-message-container"></div></div>
+             </div>
+             <!--end::Group-->
+             <!--begin::Group-->
+             <div class="form-group row align-items-center fv-plugins-icon-container order-input">
+               <label class="col-xl-3 col-lg-3 col-form-label" id="">الجنس </label>
+               <div class="col-lg-9 col-xl-6">
+                 <div class="checkbox-inline">
+                   <label class="checkbox">
+                   <input name="sex" type="radio" value="ذكر" id="option1">
+                   <span></span >
+                     ذكر</label>
+                   <label class="checkbox">
+                   <input name="sex" type="radio" value="انثى" id="option2">
+                   <span></span>انثى</label>
+                 </div>
+               <div class="fv-plugins-message-container"></div></div>
+             </div>
+             <!--end::Group-->
+               
+           </div>
+               <!--begin::Group-->
+       </div>
+   </div>
+<div></div><div></div><div></div>
+  </form>
+        
+ </section>
+
+ <section>
+     <!-- Education Level  -->
+     <div class="col-xl-12">
+       <div class="form-group row">
+         <div class="col-lg-9 col-xl-6">
+           <h4 class="font-weight-bold mb-10 text-color">قم بتعبئة كافة البيانات المطلوبة كما ورد في إستمارة الثانوية العامة :</h4>
+
+       
+
+         </div>
+       </div>
+
+       <div class="form-group row fv-plugins-icon-container order-input">
+         <label class="col-xl-3 col-lg-3 col-form-label">القسم  :</label>
+         <div class="col-lg-9 col-xl-9" id="selectInputs">
+           <select name="" class="form-control form-control-lg form-control-solid" >
+             <option selected="selected">اختر القسم  ...</option>
+             <option value="Maneger">علمي</option>
+             <option value="Teacher" >أدبي </option>
+           </select>
+         <div class="fv-plugins-message-container"></div></div>
+       </div>
+       
+       <!--begin::Group-->
+       <div class="form-group row fv-plugins-icon-container has-success order-input">
+         <label class="col-xl-3 col-lg-3 col-form-label">مكان الحصول علية    :</label>
+         <div class="col-lg-9 col-xl-9">
+             <input class="form-control form-control-solid form-control-lg is-invalid" name="cartevication" type="text" placeholder="المدرسة التى تم منها الحصول على شهادة الثانوية العامة" id="input9">
+       
+         <div class="fv-plugins-message-container"></div></div>
+     </div>
+     <!--end::Group-->
+     
+       <div class="form-group row fv-plugins-icon-container order-input">
+         <label class="col-xl-3 col-lg-3 col-form-label ">العام الدراسي  :</label>
+         <div class="col-lg-9 col-xl-9" id="selectInputs">
+           <select name="Education" class="form-control form-control-lg form-control-solid" >
+             <option selected="selected">سنة الحصول على الموهل ...</option>
+             <option value="2024 - 2025" >2024 - 2025 </option>
+             <option value="2023 - 2024">2023 - 2024 </option>
+             <option value="2023 - 2022">2023 - 2022 </option>
+             <option value="2022 - 2021">2022 - 2021</option>
+             <option value="2021 - 202a">2021 - 2020</option>
+             <option value="2020 - 2019">2020 - 2019</option>
+             <option value="2019 - 2018">2019 - 2018</option>
+           </select>
+         <div class="fv-plugins-message-container"></div></div>
+       </div>
+       
+       <!--begin::Group-->
+       <div class="form-group row fv-plugins-icon-container has-success order-input">
+         <label class="col-xl-3 col-lg-3 col-form-label">المجموع    :</label>
+         <div class="col-lg-9 col-xl-9">
+             <input class="form-control form-control-solid form-control-lg is-invalid" name="percentage" type="number" placeholder="المجوع الثانوية العامة" id="input10">
+             <span class="form-text text-muted">ادخل  المجموع الذي على شهادة الثانوية العامة .</span>
+         <div class="fv-plugins-message-container"></div></div>
+     </div>
+     <!--end::Group-->
+
+
+       <!--begin::Group-->
+       <div class="form-group row fv-plugins-icon-container has-success order-input">
+         <label class="col-xl-3 col-lg-3 col-form-label">النسبة المئوية     :</label>
+         <div class="col-lg-9 col-xl-9">
+             <input class="form-control form-control-solid form-control-lg is-invalid" name="avarge" type="number" placeholder="المعدل " id="input11">
+             <span class="form-text text-muted">ادخل قيمة بين 0 و 100.</span>
+         <div class="fv-plugins-message-container"></div></div>
+     </div>
+     <!--end::Group-->
+
+         <!--begin::Group-->
+         <div class="form-group row fv-plugins-icon-container has-success order-input">
+           <label class="col-xl-3 col-lg-3 col-form-label">رقم الجلوس   :</label>
+           <div class="col-lg-9 col-xl-9">
+               <input class="form-control form-control-solid form-control-lg is-invalid" name="idNumber" type="number" placeholder="رقم الجلوس من شهادة الثانوية العامة" id="input12">
+               <span class="form-text text-muted">رقم الجلوس  الموجود على شهادة الثانوية العامة</span>
+           <div class="fv-plugins-message-container"></div></div>
+       </div>
+       <!--end::Group-->
+
+
+
+       <div class="form-group row fv-plugins-icon-container order-input">
+         <label class="col-xl-3 col-lg-3 col-form-label">أرفق شهائد الثانوية العامة  :</label>
+         <div class="col-lg-9 col-xl-9 d-flex">
+             <input id="uploadFile"  class="form-control form-control-lg form-control-solid"  placeholder="File here" />
+             <div class="fileUpload btn btn-dark">
+                 <span> أرفع </span>
+                 <input id="uploadBtn" type="file" class="upload" />
+             </div>
+         </div>
+       </div>
+     </div>
+
+     <!-- ICONS front & end -->
+  <div class="navigation">
+   <button class="nav-button" id="backIcon">
+     <i class="fas fa-chevron-left">
+       <label for="tab2" role="button">Next</label>
+     </i> <!-- أيقونة لتحرك للخلف -->
+   </button>
+   <button class="nav-button" id="forwardIcon">
+       <i class="fas fa-chevron-right">
+         <label for="tab1" role="button">Back</label>
+       </i> <!-- أيقونة لتحرك للأمام -->
+   </button>
 </div>
+<!-- /ICONS front & end -->
+ </section>
+
+ <section>
+     <div class="col-xl-12">
+       <div class="form-group row">
+         <div class="col-lg-9 col-xl-6">
+           <h4 class="font-weight-bold mb-10 text-color">قم بتعبئة كافة البيانات المطلوبة كما ورد  الهوية الشخصية الخاص بك :</h4>
+         </div>
+       </div>
+
+       <div class="form-group row fv-plugins-icon-container order-input">
+         <label class="col-xl-3 col-lg-3 col-form-label">نوع الهوية  :</label>
+         <div class="col-lg-9 col-xl-9" id="selectInputs">
+           <select name="" class="form-control form-control-lg form-control-solid"  >
+             <option selected="selected">اختر نوع الهوية  ...</option>
+             <option value="Maneger">بطاقة شخصية</option>
+             <option value="Teacher" >جواز سفر </option>
+           </select>
+         <div class="fv-plugins-message-container"></div></div>
+       </div>
+       
+       <!--begin::Group-->
+       <div class="form-group row fv-plugins-icon-container has-success order-input">
+         <label class="col-xl-3 col-lg-3 col-form-label">جهة الاصدار   :</label>
+         <div class="col-lg-9 col-xl-9">
+             <input class="form-control form-control-solid form-control-lg is-invalid" name="" type="text" placeholder="جهة الحصول على الهوية" id="input13">
+       
+         <div class="fv-plugins-message-container"></div></div>
+     </div>
+     <!--end::Group-->
+
+     <!--begin::Group-->
+     <div class="form-group row fv-plugins-icon-container has-success order-input">
+       <label class="col-xl-3 col-lg-3 col-form-label">رقم الهوية الشخصية  :</label>
+       <div class="col-lg-9 col-xl-9">
+           <input class="form-control form-control-solid form-control-lg is-invalid" name="" type="number" placeholder="رقم الهوية" id="input14">
+       <div class="fv-plugins-message-container"></div></div>
+   </div>
+   <!--end::Group-->
+
+    <!--begin::Group-->
+     <div class="form-group row fv-plugins-icon-container has-success order-input">
+       <label class="col-xl-3 col-lg-3 col-form-label">تاريخ اصدار الهوية  :</label>
+       <div class="col-lg-9 col-xl-9">
+           <input class="form-control form-control-solid form-control-lg is-invalid" name="" type="date" placeholder="تاريخ الهوية" id="input15">
+       <div class="fv-plugins-message-container"></div></div>
+   </div>
+   <!--end::Group-->
+     
+     
+
+
+       <div class="form-group row fv-plugins-icon-container order-input">
+         <label class="col-xl-3 col-lg-3 col-form-label">أرفق الهوية الشخصية  :</label>
+         <div class="col-lg-9 col-xl-9 d-flex">
+             <input id="uploadFile"  class="form-control form-control-lg form-control-solid"  placeholder="File here" />
+             <div class="fileUpload btn btn-dark">
+                 <span> أرفع </span>
+                 <input id="uploadBtn" type="file" class="upload" />
+             </div>
+         </div>
+       </div>
+
+            <!-- Some Conditions -->
+       <div class="condition-part">
+         <div class="form-check">
+           <label>
+             <input type="checkbox" name="agree" required />
+             <a href="#" onclick="showConditions(event)">الموافقة على سياسة القبول والتسجيل</a>
+           </label>
+         </div>
+         <div class="form-check">
+           <label>
+             <input type="checkbox" name="robot" required /> I'm not a robot
+           </label>
+         </div>
+   </div>
+   <!-- /Some Conditions -->
+
+   
+   <button type="button" class="btn btn-lg mb-2 btn-color" id="submit" onclick="refreshPage()">تسجيل </button>
+   
+
+       <!-- <div id="deletAll" class="btn btn-secondary btn-lg btn-block mb-4">  </div>  -->
+      <!-- Modal -->
+      <div id="conditionsModal" class="modal">
+       <div class="modal-content">
+         <span class="close" onclick="closeConditions()">&times;</span>
+         <h2>شروط القبول والتسجيل</h2>
+         <h3>اللوائح الأكاديمية:</h3>
+         <ol>
+           <li>
+             يسمح بالتحويل من تخصص إلى أخر خلال اسبوعين من بدء الدراسة بحسب قواعد
+             لائحة شئون الطلاب الموحدة.
+           </li>
+           <li>
+             يحق للطلبة وقف القيد بعد اجتياز السنة الأولى بنجاح خلال أسبوعين من
+             بداية العام الدراسي التالي.
+           </li>
+           <li>
+             الالتزام باللوائح والانظمة الأكاديمية، والالتزام بحضور المحاضرات
+             (النظرية والعملية والحقلية والسريرية).
+           </li>
+           <li>
+             يُنذر الطالبـــة إذا بلغت نسبة الغياب 25% من إجمالي محاضرات المقرر
+             ويُبلغ ولي الأمر إذا تجاوز أكثر من ذلك.
+           </li>
+           <li>
+             يحرم الطالبـــة من الامتحانات النهائية للمقررات إذا وصلت نسبة الغياب
+             50% في المُقرر بدون عذر مقبول.
+           </li>
+           <li>
+             تُعقد الامتحانات التكميلية خلال الإجازة الصيفية وقبل العام الدراسي
+             التالي للذين لديهم اقل من أربع مُقررات رسوب في العام.
+           </li>
+           <li>
+             لا يسمح بانتقال الطلبة الى مستوى أعلى إذا تجاوزت مقررات الرسوب/الغير
+             مقاصة أكثر من 3 مقررات من المستويات السابقة. (الطلبة المقيدون في
+             برنامج وزارة الصحة يشترط عليهم النجاح بجميع المقررات للانتقال إلى
+             مستوى أعلى)
+           </li>
+           <li>F
+             على الطلبة قراءة واستيعاب لائحة شؤون الطلاب المودع نسخة منها في
+             المكتبة للاطلاع على بقية اللوائح والانظمة.
+           </li>
+           <li>
+             عدم المعرفة باللوائح والأنظمة الاكاديمية لا تعطي الطلبة حق الاعتراض
+             على تطبيقها.
+           </li>
+         </ol>
+         <h3>الرســـوم:</h3>
+         <ol>
+           <li>
+             رسوم التسجيل لمرة واحدة فقط، رسوم الأنشطة سنوياً، رسوم البطاقة
+             الأكاديمية فصلياً وتُسدد بداية كل فصل دراسي.
+           </li>
+           <li>
+             رسوم التسجيل والأنشطة والبطاقة لا ترد مهما كانت الأسباب، وتعاد
+             الرسوم الدراسية كاملة إذا أنسحب الطالب قبل بدء الدراسة.
+           </li>
+           <li>
+             في حالة الانسحاب بعد بدء الدراسة في الجامعة تخصم 5% من الرسوم
+             السنوية عن كل أسبوع من بدء الدراسة أو من بعد التسجيل، وتُلغى كافة
+             التخفيضات التي أستحقها الطالبـــة المفصول/المُنسحب في الفصول
+             الدراسية السابقة.
+           </li>
+           <li>
+             يتم تسديد الرسوم الدراسية السنوية على 2-4 أقساط، الطالب غير المُسدد
+             كامل الرسوم السنوية:
+             <ul>
+               <li>(أ) يُحرم من دخول امتحانات نهائية الفصل الدراسي.</li>
+               <li>
+                 (ب) تلغى أي تخفيضات او منح جزئية حصل عليه الطالب شاملاً
+                 المُرسلين بموجب عقود مع الجامعة.
+               </li>
+             </ul>
+           </li>
+           <li>
+             الجهات المرتبطة مع الجامعة بعقود يخضع طلابها لكافة لوائح الجامعة
+             وشروط العقد ساري المفعول.
+           </li>
+           <li>
+             يحصل الطالبـــة على تخفيض حال سداد الرسوم الدراسية مقدماً خلال
+             اسبوعين من بداية العام أو الفصل الدراسي.
+           </li>
+           <li>
+             الطلبة الذين عليهم تدريب سريري في المستشفيات أو العيادات يضاف عليهم
+             رسوم رمزية حسب ما يتقرر في سنة التدريب.
+           </li>
+           <li>
+             أي تخفيض او إعفاء من الرسوم الدراسية (منح) لا تشمل الرسوم المعملية
+             والتطبيقية.
+           </li>
+           <li>
+             لا يُمنح الطالب الخريج إفادة تخرج ولا تُرسل وثائقه للتعميد إلا بعد
+             استكمال برنامج التدريب وتعبئة نماذج إخلاء طرف من الجامعة وسدد كافة
+             الرسوم.
+           </li>
+         </ol>
+         <button onclick="closeConditions()">إغلاق</button>
+       </div>
+     </div>
+       <!-- /Modal -->
+     </div>
+ </section>
